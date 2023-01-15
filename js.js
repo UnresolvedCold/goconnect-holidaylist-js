@@ -1,5 +1,5 @@
 const cal = ics();
-
+const year = 2023;
 console.log("JS Loaded")
 
 var tab = document.getElementById("tbl-report");
@@ -31,7 +31,7 @@ console.log(CSV);
 for (var row = 1; row < CSV.length; row++) {
     for (var col=1; col<CSV[row].length; col++) {
         if (CSV[row][col]==null || CSV[row][col]=="" || CSV[row][col]=="~") continue;
-        var date = row+"/"+CSV[0][col]+"/"+"2023";
+        var date = row+"/"+CSV[0][col]+"/"+year;
         cal.addEvent(CSV[row][col]=="~"? "" : CSV[row][col], '', '', date, date);
         console.log(date);
     }
